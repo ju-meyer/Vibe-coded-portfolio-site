@@ -1,0 +1,99 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at 20% 10%, #1a2740 0%, #0c111b 45%, #090d15 100%);
+  color: #f2f5fb;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.hero-section {
+  background: linear-gradient(180deg, rgba(22, 34, 55, 0.7), rgba(11, 16, 26, 0.85));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.text-accent {
+  color: #79b4ff;
+  letter-spacing: 0.08em;
+}
+
+.section-padding {
+  padding: 4.5rem 0;
+}
+
+.section-alt {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.section-text,
+.text-light-emphasis {
+  color: #ced6e5 !important;
+}
+
+.skill-card,
+.feature-card,
+.experience-card,
+.contact-card {
+  background: rgba(22, 29, 44, 0.9);
+  color: #f7f8fb;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.skill-card:hover,
+.feature-card:hover,
+.experience-card:hover,
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.32);
+}
+
+.badge-skill {
+  background: rgba(121, 180, 255, 0.15);
+  border: 1px solid rgba(121, 180, 255, 0.35);
+  color: #d8e8ff;
+}
+
+.badge-period {
+  background: rgba(127, 247, 187, 0.15);
+  border: 1px solid rgba(127, 247, 187, 0.35);
+  color: #bcffe4;
+}
+
+.btn-accent {
+  background: linear-gradient(140deg, #79b4ff, #5a92e4);
+  color: #08152b;
+  border: none;
+  font-weight: 600;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  color: #08152b;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+
+  .hero-section .display-4 {
+    font-size: 2.2rem;
+  }
+}
