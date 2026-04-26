@@ -1,0 +1,45 @@
+name: Preview Screenshot
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - work
+
+jobs:
+  capture-homepage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build app
+        run: npm run build
+
+      - name: Start preview server
+        run: npm run preview &
+
+      - name: Wait for preview server
+        run: npx wait-on http://127.0.0.1:4173
+
+      - name: Capture homepage screenshot
+        run: npm run screenshot
+
+      - name: Upload screenshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-screenshot
+          path: artifacts/homepage.png
